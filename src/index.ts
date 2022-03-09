@@ -9,11 +9,11 @@ const app = new Application({
 	height: 480
 });
 
-const clampy: Sprite = Sprite.from("clampy.png");
+const clampy: Sprite = Sprite.from("gatizapallo.png");
 
-clampy.anchor.set(0.5);
+clampy.anchor.set(0);
 
-clampy.x = app.screen.width / 2;
-clampy.y = app.screen.height / 2;
+clampy.x = app.screen.width / 0;
+clampy.y = app.screen.height / 0;
 
 app.stage.addChild(clampy);
