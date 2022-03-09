@@ -1,19 +1,28 @@
-import { Application, Sprite } from 'pixi.js'
+import { Application, Loader, Sprite } from 'pixi.js'
 
 const app = new Application({
 	view: document.getElementById("pixi-canvas") as HTMLCanvasElement,
 	resolution: window.devicePixelRatio || 1,
 	autoDensity: true,
 	backgroundColor: 0x6495ed,
-	width: 640,
-	height: 480
+	width: 564,
+	height: 564
 });
 
-const clampy: Sprite = Sprite.from("gatizapallo.png");
+Loader.shared.add({url:"./gatizapallo.png", name: "Gatillo"});
+Loader.shared.add({url:"./clampy.png", name: "Clampy"});
 
-clampy.anchor.set(0);
+Loader.shared.onComplete.add(()=>{
+	const clampy: Sprite = Sprite.from("Gatillo");
+	console.log("Hola Mundillo",clampy.width, clampy.height);
 
-clampy.x = app.screen.width / 0;
-clampy.y = app.screen.height / 0;
+//clampy.anchor.set(0);
+
+clampy.x = 0;
+clampy.y = 0;
 
 app.stage.addChild(clampy);
+
+});
+Loader.shared.load();
+
