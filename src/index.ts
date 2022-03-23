@@ -5,24 +5,60 @@ const app = new Application({
 	resolution: window.devicePixelRatio || 1,
 	autoDensity: true,
 	backgroundColor: 0x6495ed,
-	width: 564,
-	height: 564
+	width: 1280,
+	height: 720
 });
+window.addEventListener("resize", ()=>{
+	console.log("resized");
+	
+	const scaleX = window.innerWidth / app.screen.width;
+	const scaleY = window.innerHeight / app.screen.height;
+	const scale = Math.min(scaleX, scaleY);
+	
+	const gameWidth = app.screen.width * scale;
+	const gameHeight = app.screen.height * scale;
+
+	const marginHorizontal = (window.innerWidth - gameWidth) / 2;
+	const marginVertical = (window.innerHeight - gameHeight) / 2;
+	
+	app.view.style.width = gameWidth + "px";
+	app.view.style.height = gameHeight + "px";
+
+	app.view.style.marginLeft = marginHorizontal + "px";
+	app.view.style.marginRight = marginHorizontal + "px";
+
+	app.view.style.marginTop = marginVertical + "px";
+	app.view.style.marginBottom = marginVertical + "px";
+
+
+})
+window.dispatchEvent(new Event("resize"));
+
+
+
 
 Loader.shared.add({url:"./gatizapallo.png", name: "Gatillo"});
-Loader.shared.add({url:"./clampy.png", name: "Clampy"});
+Loader.shared.add({url:"./JOYSTICK.png", name: "joystick"});
 
 Loader.shared.onComplete.add(()=>{
-	const clampy: Sprite = Sprite.from("Gatillo");
-	console.log("Hola Mundillo",clampy.width, clampy.height);
+	const Gatillo: Sprite = Sprite.from("Gatillo");
+	console.log("Hola Mundillo", window.innerWidth, window.innerHeight);
 
 //clampy.anchor.set(0);
 
-clampy.x = 0;
-clampy.y = 0;
+Gatillo.x = 500;
+Gatillo.y = 200;
 
-app.stage.addChild(clampy);
+Gatillo.scale.x = 0.5;
+Gatillo.scale.y = 0.5;
 
+const joystick: Sprite = Sprite.from("joystick");
+
+
+
+
+app.stage.addChild(Gatillo);
+app.stage.addChild(joystick);
 });
 Loader.shared.load();
 
