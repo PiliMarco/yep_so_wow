@@ -46,26 +46,26 @@ Loader.shared.onComplete.add(()=>{
 
 //clampy.anchor.set(0);
 
-Gatillo.x = 500;
-Gatillo.y = 200;
+//Gatillo.x = 500;
+//Gatillo.y = 200;
 
-Gatillo.scale.x = 0.5;
-Gatillo.scale.y = 0.5;
+//Gatillo.scale.x = 0.5;
+//Gatillo.scale.y = 0.5;
 
 const joystick: Sprite = Sprite.from("joystick");
 
-joystick.scale.set(0.5,0.5);
-joystick.position.set(490,430);
+//joystick.scale.set(0.5);
+//joystick.position.set(490,430);
+joystick.position.set(-10,434);
 joystick.rotation = 250; 
 
 const gatilloWithJoy : Container = new Container();
 
-
-
-
-
 gatilloWithJoy.addChild(Gatillo);
 gatilloWithJoy.addChild(joystick);
+
+gatilloWithJoy.position.set(400,200);
+gatilloWithJoy.scale.set(0.5,0.5);
 
 app.stage.addChild(gatilloWithJoy);
 });
