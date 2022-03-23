@@ -54,6 +54,10 @@ Gatillo.scale.y = 0.5;
 
 const joystick: Sprite = Sprite.from("joystick");
 
+joystick.scale.set(0.5,0.5);
+joystick.position.set(490,430);
+joystick.rotation = 250; 
+
 
 
 
