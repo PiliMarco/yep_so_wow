@@ -1,4 +1,4 @@
-import { Application, Loader, Sprite } from 'pixi.js'
+import { Application, Container, Loader, Sprite } from 'pixi.js'
 
 const app = new Application({
 	view: document.getElementById("pixi-canvas") as HTMLCanvasElement,
@@ -58,11 +58,16 @@ joystick.scale.set(0.5,0.5);
 joystick.position.set(490,430);
 joystick.rotation = 250; 
 
+const gatilloWithJoy : Container = new Container();
 
 
 
-app.stage.addChild(Gatillo);
-app.stage.addChild(joystick);
+
+
+gatilloWithJoy.addChild(Gatillo);
+gatilloWithJoy.addChild(joystick);
+
+app.stage.addChild(gatilloWithJoy);
 });
 Loader.shared.load();
 
