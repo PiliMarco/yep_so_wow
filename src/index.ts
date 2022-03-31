@@ -1,4 +1,6 @@
-import { Application, Container, Loader, Sprite } from 'pixi.js'
+import { Application, Loader} from 'pixi.js'
+import { assets } from './assets';
+import { GatiJoy } from './GatilloWithJoy';
 
 const app = new Application({
 	view: document.getElementById("pixi-canvas") as HTMLCanvasElement,
@@ -37,32 +39,12 @@ window.dispatchEvent(new Event("resize"));
 
 
 
-Loader.shared.add({url:"./gatizapallo.png", name: "Gatillo"});
-Loader.shared.add({url:"./JOYSTICK.png", name: "joystick"});
-
+Loader.shared.add(assets);
 Loader.shared.onComplete.add(()=>{
-	const Gatillo: Sprite = Sprite.from("Gatillo");
-	console.log("Hola Mundillo", window.innerWidth, window.innerHeight);
-
-//clampy.anchor.set(0);
-
-//Gatillo.x = 500;
-//Gatillo.y = 200;
-
-//Gatillo.scale.x = 0.5;
-//Gatillo.scale.y = 0.5;
-
-const joystick: Sprite = Sprite.from("joystick");
-
-//joystick.scale.set(0.5);
-//joystick.position.set(490,430);
-joystick.position.set(-10,434);
-joystick.rotation = 250; 
-
-const gatilloWithJoy : Container = new Container();
-
-gatilloWithJoy.addChild(Gatillo);
-gatilloWithJoy.addChild(joystick);
+	
+	
+	const gatilloWithJoy : GatiJoy = new GatiJoy();
+	
 
 gatilloWithJoy.position.set(400,200);
 gatilloWithJoy.scale.set(0.5,0.5);
