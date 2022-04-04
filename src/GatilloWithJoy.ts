@@ -1,8 +1,9 @@
 import { Container, Sprite } from "pixi.js";
 
 export class GatiJoy extends Container {
-    constructor (){
-        super ();
+    constructor ()
+    {
+            super ();
     const joystick: Sprite = Sprite.from("joystick");
 	const Gatillo: Sprite = Sprite.from("Gatillo");
 
@@ -13,4 +14,5 @@ export class GatiJoy extends Container {
     this.addChild(Gatillo);
     this.addChild(joystick);
 
-}}
+}
+}

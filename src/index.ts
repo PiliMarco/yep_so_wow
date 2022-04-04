@@ -43,8 +43,6 @@ Loader.shared.add(assets);
 Loader.shared.onComplete.add(()=>{
 	const myScene = new Scene();
 	app.stage.addChild(myScene);
-	
-
 });
 Loader.shared.load();
 
