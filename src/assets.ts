@@ -11,5 +11,6 @@ export const assets =
 {url: "./you win/star_1.png", name: "estrellas"},
 {url: "./you win/tabla.png", name: "tabla"},
 {url: "./you win/header.png", name: "ganaste"},
+{url: "./you win/menu.png", name: "menu"},
 
 ]

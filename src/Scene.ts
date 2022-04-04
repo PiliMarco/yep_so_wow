@@ -7,12 +7,16 @@ constructor()
 {
     super();
     const gatilloWithJoy : GatiJoy = new GatiJoy();
-	gatilloWithJoy.position.set(400,200);
+	gatilloWithJoy.position.set(100,200);
     gatilloWithJoy.scale.set(0.5,0.5);
     this.addChild(gatilloWithJoy);
     
     const GanasteSprites : GanasteUi = new GanasteUi();
-    this.addChild(GanasteSprites);
+    GanasteSprites.position.set(400,80);
+    GanasteSprites.scale.set(0.9,0.9);
+    this.addChild(GanasteSprites)
+
+    
 
 }
 }
