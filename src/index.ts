@@ -1,6 +1,6 @@
 import { Application, Loader} from 'pixi.js'
 import { assets } from './assets';
-import { GatiJoy } from './GatilloWithJoy';
+import { Scene } from './Scene';
 
 const app = new Application({
 	view: document.getElementById("pixi-canvas") as HTMLCanvasElement,
@@ -41,15 +41,10 @@ window.dispatchEvent(new Event("resize"));
 
 Loader.shared.add(assets);
 Loader.shared.onComplete.add(()=>{
-	
-	
-	const gatilloWithJoy : GatiJoy = new GatiJoy();
+	const myScene = new Scene();
+	app.stage.addChild(myScene);
 	
 
-gatilloWithJoy.position.set(400,200);
-gatilloWithJoy.scale.set(0.5,0.5);
-
-app.stage.addChild(gatilloWithJoy);
 });
 Loader.shared.load();
 
