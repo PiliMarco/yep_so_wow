@@ -1,5 +1,5 @@
 import { Container } from "pixi.js";
-import { GatiJoy } from "./GatilloWithJoy";
+import { GatiJoy } from "../game/GatilloWithJoy";
 import { GanasteUi } from "./Ui_Win";
 
 export class Scene extends Container {
