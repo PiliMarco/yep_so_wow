@@ -1,6 +1,8 @@
 import { Application, Loader} from 'pixi.js'
 import { assets } from './assets';
-import { Scene } from './scenes/Scene';
+//import { Scene } from './scenes/Scene';
+import { UiMenu } from './scenes/UI_Menu';
+import { Keyboard } from './UI/Keyboard';
 
 const app = new Application({
 	view: document.getElementById("pixi-canvas") as HTMLCanvasElement,
@@ -10,6 +12,8 @@ const app = new Application({
 	width: 1280,
 	height: 720
 });
+Keyboard.initialize();
+
 window.addEventListener("resize", ()=>{
 	console.log("resized");
 	
@@ -37,12 +41,12 @@ window.addEventListener("resize", ()=>{
 window.dispatchEvent(new Event("resize"));
 
 
-
-
 Loader.shared.add(assets);
 Loader.shared.onComplete.add(()=>{
-	const myScene = new Scene();
-	app.stage.addChild(myScene);
+	/*const myScene = new Scene();
+	app.stage.addChild(myScene);*/
+	const myUiMenu = new UiMenu();
+	app.stage.addChild(myUiMenu);
 });
 Loader.shared.load();
 
