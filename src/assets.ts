@@ -26,4 +26,8 @@ export const assets =
 {url: "./menu/Settings Button Down.png", name: "settingsbuttondown"},
 {url: "./menu/standard_gem.png", name: "gemacolorida"},
 {url: "./menu/menutablaespacial.png", name: "tablamenuespacial"},
+
+{url: "./spaceman frames/spaceman_run_1.png", name: "spacemanrun1"},
+{url: "./spaceman frames/spaceman_run_2.png", name: "spacemanrun2"},
+{url: "./spaceman frames/spaceman_run_3.png", name: "spacemanrun3"},
 ]

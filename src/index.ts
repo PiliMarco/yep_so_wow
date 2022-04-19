@@ -1,7 +1,8 @@
 import { Application, Loader} from 'pixi.js'
 import { assets } from './assets';
+import { SceneSpaceMan } from './scenes/SceneSpaceMan';
 //import { Scene } from './scenes/Scene';
-import { UiMenu } from './scenes/UI_Menu';
+//import { UiMenu } from './scenes/UI_Menu';
 import { Keyboard } from './UI/Keyboard';
 
 const app = new Application({
@@ -44,9 +45,11 @@ window.dispatchEvent(new Event("resize"));
 Loader.shared.add(assets);
 Loader.shared.onComplete.add(()=>{
 	/*const myScene = new Scene();
-	app.stage.addChild(myScene);*/
+	app.stage.addChild(myScene);
 	const myUiMenu = new UiMenu();
-	app.stage.addChild(myUiMenu);
+	app.stage.addChild(myUiMenu);*/
+	const mySpaceManAnimated = new SceneSpaceMan();
+	app.stage.addChild(mySpaceManAnimated);
 });
 Loader.shared.load();
 
