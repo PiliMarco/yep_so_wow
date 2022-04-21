@@ -1,9 +1,9 @@
-import { Application, Loader} from 'pixi.js'
+import { Application, Loader, Ticker} from 'pixi.js'
 import { assets } from './assets';
-import { SceneSpaceMan } from './scenes/SceneSpaceMan';
+import { SceneSpaceManTicker } from './scenes/SceneSpaceMan';
 //import { Scene } from './scenes/Scene';
 //import { UiMenu } from './scenes/UI_Menu';
-import { Keyboard } from './UI/Keyboard';
+import { Keyboard } from './utils/Keyboard';
 
 const app = new Application({
 	view: document.getElementById("pixi-canvas") as HTMLCanvasElement,
@@ -48,8 +48,13 @@ Loader.shared.onComplete.add(()=>{
 	app.stage.addChild(myScene);
 	const myUiMenu = new UiMenu();
 	app.stage.addChild(myUiMenu);*/
-	const mySpaceManAnimated = new SceneSpaceMan();
-	app.stage.addChild(mySpaceManAnimated);
+	const mySpaceManScene = new SceneSpaceManTicker();
+	app.stage.addChild(mySpaceManScene);
+	Ticker.shared.add(function(deltaFrame){
+		mySpaceManScene.update(Ticker.shared.deltaMS, deltaFrame);
+		
+	
+	})
 });
 Loader.shared.load();
 

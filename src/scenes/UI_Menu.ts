@@ -1,6 +1,6 @@
 import { Container, Sprite, Texture } from "pixi.js";
 import { Button } from "../UI/Button";
-import { Keyboard } from "../UI/Keyboard";
+import { Keyboard } from "../utils/Keyboard";
 export class UiMenu extends Container
 {
 private exitbutton:Button
@@ -46,6 +46,7 @@ private startbutton:Button
 
         Keyboard.down.on("KeyB", this.onKeyB, this);
         Keyboard.up.on("KeyB", this.onKeyBUp, this);
+        
 
     }
     
