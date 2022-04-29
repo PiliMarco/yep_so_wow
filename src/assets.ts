@@ -30,4 +30,6 @@ export const assets =
 {url: "./spaceman frames/spaceman_run_1.png", name: "spacemanrun1"},
 {url: "./spaceman frames/spaceman_run_2.png", name: "spacemanrun2"},
 {url: "./spaceman frames/spaceman_run_3.png", name: "spacemanrun3"},
+
+{url: "./dvd p/0.png", name: "dvdimagen"},
 ]
