@@ -1,6 +1,7 @@
 import { Application, Loader, Ticker} from 'pixi.js'
 import { assets } from './assets';
-import { DvdProtector } from './scenes/dvdprotector';
+//import { DvdProtector } from './scenes/dvdprotector';
+import { SceneSpaceManTicker } from './scenes/SceneSpaceManTicker';
 //import { SceneSpaceManTicker } from './scenes/SceneSpaceMan';
 //import { Scene } from './scenes/Scene';
 //import { UiMenu } from './scenes/UI_Menu';
@@ -53,18 +54,18 @@ Loader.shared.onComplete.add(()=>{
 	const myUiMenu = new UiMenu();
 	app.stage.addChild(myUiMenu);*/
 
-	/*const mySpaceManScene = new SceneSpaceManTicker();
+	const mySpaceManScene = new SceneSpaceManTicker();
 	app.stage.addChild(mySpaceManScene);
 	Ticker.shared.add(function(deltaFrame){
 		mySpaceManScene.update(Ticker.shared.deltaMS, deltaFrame);
 		
 	
-	}) */
-	const DVDScene = new DvdProtector();
+	}) 
+	/*const DVDScene = new DvdProtector();
 	app.stage.addChild(DVDScene);
 	
     Ticker.shared.add(function(deltaFrame){
-		DVDScene.update(Ticker.shared.deltaMS, deltaFrame);})	
+		DVDScene.update(Ticker.shared.deltaMS, deltaFrame);})*/	
 	
 });
 Loader.shared.load();
