@@ -8,6 +8,7 @@ export class Player extends PhysicsContainer
     private static readonly GRAVITY = 500;
     private static readonly MOVE_SPEED = 100;
     public canJump = true;
+    private hitbox: Graphics;
 
     constructor(){
         super();
@@ -33,8 +34,16 @@ export class Player extends PhysicsContainer
       auxZero.drawCircle(0,0,10);
       auxZero.endFill();
   
+      this.hitbox = new Graphics();
+      this.hitbox.beginFill(0xFF00FF, 0.3);
+      this.hitbox.drawRect(0,0,36,74);
+      this.hitbox.endFill();
+      this.hitbox.x = -36;
+      this.hitbox.y = -74;
+
       this.addChild(this.spacemananimated)
       this.addChild(auxZero);
+      this.addChild(this.hitbox);
     
       this.acceleration.y = Player.GRAVITY;
     }
@@ -44,10 +53,12 @@ export class Player extends PhysicsContainer
              if (Keyboard.state.get("ArrowRight"))
              {
                  this.speed.x = Player.MOVE_SPEED;
+                 this.spacemananimated.scale.x = 1.5;
              }
              else if(Keyboard.state.get("ArrowLeft"))
              {
                  this.speed.x = -Player.MOVE_SPEED
+                 this.spacemananimated.scale.x = -1.5;
              }
              else {this.speed.x = 0}
 
@@ -63,7 +74,7 @@ export class Player extends PhysicsContainer
 
              if (Keyboard.state.get("ArrowUp") && this.canJump)
              {
-                 this.canJump = false;
+                 //this.canJump = false;
                  this.speed.y = -400;
              }
                 
