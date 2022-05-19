@@ -24,7 +24,7 @@ export class Player extends PhysicsContainer
       
       this.spacemananimated.play()
       this.spacemananimated.scale.set(1.5);
-      this.spacemananimated.anchor.set(1,1);
+      this.spacemananimated.anchor.set(0.5,1);
       //this.spacemananimated.position.set(1000,600);
       this.spacemananimated.animationSpeed = 0.17;
       
@@ -36,14 +36,14 @@ export class Player extends PhysicsContainer
   
       this.hitbox = new Graphics();
       this.hitbox.beginFill(0xFF00FF, 0.3);
-      this.hitbox.drawRect(0,0,36,74);
+      this.hitbox.drawRect(0,0,23,53);
       this.hitbox.endFill();
-      this.hitbox.x = -36;
-      this.hitbox.y = -74;
+      this.hitbox.x = -12;
+      this.hitbox.y = -52;
 
       this.addChild(this.spacemananimated)
       this.addChild(auxZero);
-      this.addChild(this.hitbox);
+      this.spacemananimated.addChild(this.hitbox);
     
       this.acceleration.y = Player.GRAVITY;
     }
